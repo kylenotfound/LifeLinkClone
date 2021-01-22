@@ -7,12 +7,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.util.Random;
 
-public class DeathListeners implements Listener {
+public class Listeners implements Listener {
 
-    private final double NO_HEALTH = 0.0;
+    private double NO_HEALTH = 0.0;
 
     @EventHandler
     public void deathCheck(EntityDamageEvent event){
@@ -40,6 +41,20 @@ public class DeathListeners implements Listener {
                         break;
                 }
             }
+        }
+    }
+
+    @EventHandler
+    public void playerJoin(PlayerJoinEvent event) {
+        event.setJoinMessage("");
+        if (Bukkit.getOnlinePlayers().size() <= 1) {
+            Bukkit.broadcastMessage(ChatColor.BLUE + "===LIFE LINK ACTIVATED===");
+            Bukkit.broadcastMessage(ChatColor.RED + event.getPlayer().getName() +
+                    " your life will be linked to all incoming players.");
+        } else {
+            Bukkit.broadcastMessage(ChatColor.RED + event.getPlayer().getName() +
+                    " your life has been linked to all other players.\n" +
+                    ChatColor.BLACK + "Good Luck.");
         }
     }
 

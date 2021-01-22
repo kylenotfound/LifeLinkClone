@@ -4,4 +4,4 @@ main: com.spacelampsix.LifeLink.LifeLink
 api-version: 1.13
 authors: [KyleEvangelisto]
 description: If one player dies, all of them do.
-website: kyleevangelisto.com
+website: spacelampsix.com
