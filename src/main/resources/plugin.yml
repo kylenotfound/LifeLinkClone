@@ -2,6 +2,6 @@ name: LifeLink
 version: ${project.version}
 main: com.spacelampsix.LifeLink.LifeLink
 api-version: 1.13
-authors: [KyleEvangelisto]
+authors: [spacelampsix]
 description: If one player dies, all of them do.
 website: spacelampsix.com
